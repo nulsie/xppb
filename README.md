@@ -22,7 +22,9 @@ While tools like PyInstaller, Nuitka, and cx_Freeze are industry standards, xppb
 
 * **Zero-Flash Windows Launchers**: Instead of relying solely on slow script wrappers, xppb scans the host for native C compilers (`gcc`, `cl`, etc.) and dynamically templates and compiles a C-based executable (`launcher_stub.c`) to launch the application silently without console flashes.
 
+* **No Code Obfuscation**:
 
+Because this tool is purely for open source software, there is absolutely no bytecode compilation specifically made for obfuscation, and there will never be. 
 
 ---
 
@@ -58,10 +60,6 @@ for s in data.split(b'\0'):
 ### 3. Persistent Runtime Caching
 
 To save bandwidth across frequent builds, xppb downloads massive standard standard-library `.tar.gz` runtimes into a persistent user-level directory (`~/.core_bundler_cache/runtimes`). Subsequent cross-compilations pull locally from the cache instantly.
-
-### 4. No Code Obfuscation
-
-Because this tool is purely for open source software, there is absolutely no bytecode compilation specifically made for obfuscation, and there will never be. 
 
 ---
 
