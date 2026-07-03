@@ -22,9 +22,7 @@ While tools like PyInstaller, Nuitka, and cx_Freeze are industry standards, xppb
 
 * **Zero-Flash Windows Launchers**: Instead of relying solely on slow script wrappers, xppb scans the host for native C compilers (`gcc`, `cl`, etc.) and dynamically templates and compiles a C-based executable (`launcher_stub.c`) to launch the application silently without console flashes.
 
-* **No Code Obfuscation**:
-
-Because this tool is purely for open source software, there is absolutely no bytecode compilation specifically made for obfuscation, and there will never be. 
+* **No Code Obfuscation**: Because this tool is purely for open source software, there is absolutely no bytecode compilation specifically made for obfuscation, and there will never be. 
 
 ---
 
