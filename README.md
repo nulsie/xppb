@@ -73,7 +73,7 @@ just remove the uv from the above command.
 
 ## Git Clone:
 ```
-git clone https://codeberg.org/nulsie/xppb.git
+git clone https://github.com/nulsie/xppb
 cd xppb
 ```
 
@@ -142,3 +142,7 @@ xppb utilizes a `ProcessPoolExecutor` to spin up a concurrent build thread for e
 -----
 
 **Author:** nulsie **License:** MIT License
+
+-----
+
+*Note: the pip package version will always be one minor version ahead of others because i had forgot to add the license file in the first build so had to do it again.*
