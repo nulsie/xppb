@@ -59,6 +59,10 @@ for s in data.split(b'\0'):
 
 To save bandwidth across frequent builds, xppb downloads massive standard standard-library `.tar.gz` runtimes into a persistent user-level directory (`~/.core_bundler_cache/runtimes`). Subsequent cross-compilations pull locally from the cache instantly.
 
+### 4. No Code Obfuscation
+
+Because this tool is purely for open source software, there is absolutely no bytecode compilation specifically made for obfuscation, and there will never be. 
+
 ---
 
 ## On Using It
