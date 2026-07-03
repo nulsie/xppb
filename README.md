@@ -6,7 +6,7 @@ v1.0.0
 
 -----
 
-xppb is a fast(when compared to PyInstaller and Nuitka) and cross-platform binary bundler designed to compile, de-bloat, and bundle Python programmes for Linux, Winslop and macOS.
+xppb is a fast (when compared to PyInstaller and Nuitka) and cross-platform binary bundler designed to compile, de-bloat, and bundle Python programmes for Linux, Winslop and macOS.
 
 Unlike traditional bundlers that are severely limited by their host operating system, xppb supports **cross-compilation** out of the box. By temporarily spoofing the Python interpreter's global state and relying on standard archives, a developer on Linux can easily build a signed Windows `.exe` and a fully notarized macOS `.app` bundle simultaneously in a single execution in a matter of seconds(takes a lot configuration and 20-30 min in Nuitka for reference).
 
