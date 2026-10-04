@@ -1,7 +1,5 @@
 # xppb (cross-platform python bundler)
 
------
-
 v1.1.0
 
 -----
@@ -14,7 +12,6 @@ xppb also have built-in features of code signing for Mac and Winslop, hence lett
 
 It also checks if the user is having `uv` and if so, will resort to installation with it, as `uv` provides an absurdly fast deps resolution than the standard `pip`.
 
----
 
 ## On Using It
 
@@ -57,7 +54,7 @@ hidden_imports = ["pkg_resources.extern"]
 collect_all = []
 preserve_extensions = [".png", ".ico"]
 launch_command = "{ENTRY_POINT}"
-upx_exclude = []
+upx_exclude = [] # this is a new thing, as if you have anything to exclude from UPX compressing, write it here
 
 [runtimes]
 # URLs pointing to standalone python standard libraries (.tar.gz)
@@ -131,5 +128,3 @@ Change(s):
 -----
 
 **Author:** nulsie **License:** MIT 
-
------
