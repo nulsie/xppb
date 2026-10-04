@@ -8,7 +8,7 @@ v1.1.0
 
 xppb is a fast(when compared to PyInstaller and Nuitka) and cross-platform binary bundler designed to compile, prune, and bundle Python programmes for Linux, Winslop and macOS. Unlike traditional bundlers that are severely limited by their host operating system, xppb supports **cross-compilation** out of the box. By temporarily spoofing the Python interpreter's global state and relying on standard archives, a developer on Linux can easily build a signed Windows `.exe` and a fully notarized macOS `.app` bundle simultaneously in a single execution from a single machine in a matter of seconds(takes a lot configuration and 20-30 min in Nuitka for reference).
 
-The build size in this tool is also very minimal(with v1.1.1, it kinda beats Nuitka in output sizes), by using a strict 'default-deny' whitelist approach, deleting every file in `site-packages` and the standard library that is not explicitly resolved by the dependency graph. It safely preserves only the structural `__init__.py` files, compiled extensions, and active metadata blocks (like `.dist-info`).
+The build size in this tool is also very minimal(with v1.1.0, it kinda beats Nuitka in output sizes), by using a strict 'default-deny' whitelist approach, deleting every file in `site-packages` and the standard library that is not explicitly resolved by the dependency graph. It safely preserves only the structural `__init__.py` files, compiled extensions, and active metadata blocks (like `.dist-info`).
 
 xppb also have built-in features of code signing for Mac and Winslop, hence letting the user straightforwardly sign or notarize a program for macOS or Winslop from other OSes(eg, Linux) or machines.
 
