@@ -1,0 +1,25 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "xppb"
+authors = [{name = "nulsie", email = "donotemailme@mail.com"}]
+readme = "README.md"
+requires-python = ">=3.11"
+dynamic = ["version", "description"]
+dependencies = [
+    "modulegraph>=0.17.4",
+]
+
+license = "MIT"
+license-files = ["LICENSE"]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Build Tools",
+]
+
+[project.scripts]
+xppb = "xppb:main"
