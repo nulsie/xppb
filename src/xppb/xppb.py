@@ -728,7 +728,8 @@ def bundle_platform(platform_name, url, build_dir, dist_dir, base_temp_dir, CONF
         sign_windows_executable(launcher_path, CONFIG['WINDOWS_CONFIG'])
     elif is_macos:
         launcher_path = macos_dir / CONFIG['PROJECT_NAME']
-        launch_cmd = CONFIG['LAUNCH_COMMAND'].format(ENTRY_POINT=f'"$SCRIPT_DIR/../Resources/{CONFIG[\'ENTRY_POINT\']}"')
+        #(v1.1.1) critical bug patch: backslash escape characters (\') used around 'ENTRY_POINT' inside the single-quoted f-strings on lines 731 and 763 confuse the Python 3.14 lexer causing it to mistake them as line continuation characters and throw a SyntaxError
+        launch_cmd = CONFIG['LAUNCH_COMMAND'].format(ENTRY_POINT=f'"$SCRIPT_DIR/../Resources/{CONFIG["ENTRY_POINT"]}"')
         sh_content = f'#!/usr/bin/env bash\nSCRIPT_DIR="$(cd "$(dirname "${{BASH_SOURCE[0]}}")" && pwd)"\n"$SCRIPT_DIR/../Resources/python/bin/python3" {launch_cmd} "$@"\n'
         launcher_path.write_text(sh_content)
         generate_info_plist(contents_dir / 'Info.plist', CONFIG['PROJECT_NAME'], CONFIG['VERSION'])
@@ -741,7 +742,8 @@ def bundle_platform(platform_name, url, build_dir, dist_dir, base_temp_dir, CONF
         notarize_macos_bundle_cross_platform(app_bundle, CONFIG['MACOS_CONFIG'], rcodesign_bin)
     else:
         launcher_path = platform_dir / CONFIG['PROJECT_NAME']
-        launch_cmd = CONFIG['LAUNCH_COMMAND'].format(ENTRY_POINT=f'"$SCRIPT_DIR/{CONFIG[\'ENTRY_POINT\']}"')
+        #(v1.1.1)critical synatx bug patch
+        launch_cmd = CONFIG['LAUNCH_COMMAND'].format(ENTRY_POINT=f'"$SCRIPT_DIR/{CONFIG["ENTRY_POINT"]}"')
         sh_content = f'#!/usr/bin/env bash\nSCRIPT_DIR="$(cd "$(dirname "${{BASH_SOURCE[0]}}")" && pwd)"\n"$SCRIPT_DIR/python/bin/python3" {launch_cmd} "$@"\n'
         launcher_path.write_text(sh_content)
         os.chmod(launcher_path, 493)
