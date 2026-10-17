@@ -2,6 +2,12 @@
 
 changelog for xppb project.
 
+## [v1.1.1] - 2026-10-12
+
+### Fixed
+
+- Backlash escape character confusion
+
 ## [v1.1.0] - 2026-10-04
 
 ### Added
